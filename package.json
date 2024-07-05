@@ -1,0 +1,24 @@
+{
+  "name": "nhl_stats",
+  "version": "1.0.0",
+  "description": "This section provides documentation for the NHL Stats API. Based on the unofficial documentation https://github.com/Zmalski/NHL-API-Reference",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "typescript",
+    "sdk",
+    "api",
+    "client"
+  ],
+  "author": "",
+  "license": "",
+  "devDependencies": {
+    "typescript": "5.3.3"
+  },
+  "dependencies": {
+    "zod": "3.22.0"
+  }
+}
