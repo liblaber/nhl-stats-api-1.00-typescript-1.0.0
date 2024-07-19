@@ -1,8 +1,8 @@
 {
-  "liblabVersion": "2.1.18",
-  "date": "2024-07-05T22:21:17.095Z",
+  "liblabVersion": "2.1.20",
+  "date": "2024-07-19T09:43:46.711Z",
   "config": {
-    "apiId": 371,
+    "apiId": 416,
     "baseUrl": "https://api-web.nhle.com/",
     "sdkName": "nhl_stats",
     "sdkVersion": "1.0.0",
@@ -11,31 +11,9 @@
     "languages": ["typescript"],
     "apiVersion": "1.0.0",
     "apiName": "nhl_stats",
-    "specFilePath": "./nhl.yaml",
+    "specFilePath": "./NHL_stats_API.yaml",
     "auth": [],
     "languageOptions": {
-      "csharp": {
-        "packageId": "",
-        "githubRepoName": "",
-        "ignoreFiles": [],
-        "liblabVersion": "2",
-        "sdkVersion": "1.0.0"
-      },
-      "go": {
-        "goModuleName": "github.com/swagger-api/swagger-petstore",
-        "githubRepoName": "",
-        "ignoreFiles": [],
-        "liblabVersion": "2",
-        "sdkVersion": "1.0.0"
-      },
-      "python": {
-        "alwaysInitializeOptionals": false,
-        "pypiPackageName": "nhl-stats-client",
-        "githubRepoName": "",
-        "ignoreFiles": [],
-        "liblabVersion": "2",
-        "sdkVersion": "1.0.0"
-      },
       "typescript": {
         "bundle": false,
         "exportClassDefault": false,
@@ -55,7 +33,6 @@
     "generateEnv": true,
     "includeOptionalSnippetParameters": true,
     "inferServiceNames": false,
-    "injectedModels": [],
     "license": {
       "type": "MIT",
       "name": "MIT",
@@ -74,12 +51,7 @@
       "httpMethodsToRetry": ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"]
     },
     "multiTenant": true,
-    "hooksLocation": {
-      "bucketKey": "13001/hooks.zip",
-      "bucketName": "dev-liblab-api-stack-hooks"
-    },
-    "specUrl": "https://dev-liblab-api-stack-specs.s3.us-east-1.amazonaws.com/371/open-api-spec.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIA3C2RXH7MWUCMN7ON%2F20240705%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240705T222116Z&X-Amz-Expires=43200&X-Amz-Signature=c47ac6095bbc426acfdfa91eb8352f5a6a9129147f6c7926f9b5d0fc40dc2979&X-Amz-SignedHeaders=host&x-id=GetObject",
-    "workflow": null,
+    "specUrl": "https://dev-liblab-api-stack-specs.s3.us-east-1.amazonaws.com/416/open-api-spec.yaml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIA3C2RXH7MWUCMN7ON%2F20240719%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240719T094342Z&X-Amz-Expires=43200&X-Amz-Signature=5697413023241086db944acccbfcdbe13e53f665b4ed8663906ebedd17a778ed&X-Amz-SignedHeaders=host&x-id=GetObject",
     "includeWatermark": true,
     "language": "typescript",
     "deliveryMethod": "zip",
@@ -130,7 +102,13 @@
     ".gitignore",
     "src/services/base-service.ts",
     "src/services/players/players.ts",
+    "src/services/skaters/skaters.ts",
+    "src/services/goalies/goalies.ts",
     "src/services/draft/draft.ts",
+    "src/services/teams/teams.ts",
+    "src/services/season/season.ts",
+    "src/services/game/game.ts",
+    "src/services/miscellaneous/miscellaneous.ts",
     "src/index.ts",
     "src/http/index.ts",
     "src/services/players/index.ts",
@@ -157,19 +135,14 @@
     "src/services/teams/request-params.ts",
     "src/services/miscellaneous/request-params.ts",
     "src/http/handlers/request-validation-handler.ts",
-    "src/services/season/season.ts",
-    "src/services/game/game.ts",
-    "src/services/goalies/goalies.ts",
-    "src/services/teams/teams.ts",
+    "src/http/transport/request.ts",
     "documentation/services/PlayersService.md",
     "documentation/services/DraftService.md",
-    "src/services/skaters/skaters.ts",
     "documentation/services/SeasonService.md",
     "documentation/services/GameService.md",
     "documentation/services/GoaliesService.md",
     "documentation/services/TeamsService.md",
     "documentation/services/SkatersService.md",
-    "src/services/miscellaneous/miscellaneous.ts",
     "documentation/services/MiscellaneousService.md",
     "README.md"
   ]

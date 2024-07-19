@@ -72,6 +72,17 @@ export class NhlStats {
     this.game.baseUrl = environment;
     this.miscellaneous.baseUrl = environment;
   }
+
+  set timeout(timeout: number) {
+    this.players.timeout = timeout;
+    this.skaters.timeout = timeout;
+    this.goalies.timeout = timeout;
+    this.draft.timeout = timeout;
+    this.teams.timeout = timeout;
+    this.season.timeout = timeout;
+    this.game.timeout = timeout;
+    this.miscellaneous.timeout = timeout;
+  }
 }
 
 // c029837e0e474b76bc487506e8799df5e3335891efe4fb02bda7a1441840310c

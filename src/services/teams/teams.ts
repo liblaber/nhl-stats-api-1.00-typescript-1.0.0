@@ -4,6 +4,7 @@ import { z } from 'zod';
 import { BaseService } from '../base-service';
 import { ContentType, HttpResponse } from '../../http';
 import { RequestConfig } from '../../http/types';
+import { Request } from '../../http/transport/request';
 import { GetTeamStatsParams } from './request-params';
 
 export class TeamsService extends BaseService {
@@ -13,17 +14,18 @@ export class TeamsService extends BaseService {
    * @returns {Promise<HttpResponse<any>>} Successful response
    */
   async getTeamInformation(lang: string, requestConfig?: RequestConfig): Promise<HttpResponse<any>> {
-    const path = this.client.buildPath('/{lang}/team', { lang: lang });
-    const options: any = {
+    const request = new Request({
+      method: 'GET',
+      path: '/{lang}/team',
+      config: this.config,
       responseSchema: z.any(),
       requestSchema: z.any(),
-      headers: {},
       requestContentType: ContentType.Json,
       responseContentType: ContentType.Json,
-      retry: requestConfig?.retry,
-      config: this.config,
-    };
-    return this.client.get(path, options);
+      requestConfig,
+    });
+    request.addPathParam('lang', lang);
+    return this.client.call(request);
   }
 
   /**
@@ -48,48 +50,29 @@ export class TeamsService extends BaseService {
     params?: GetTeamStatsParams,
     requestConfig?: RequestConfig,
   ): Promise<HttpResponse<any>> {
-    const path = this.client.buildPath('/{lang}/team/{report}', { report: report, lang: lang });
-    const options: any = {
+    const request = new Request({
+      method: 'GET',
+      path: '/{lang}/team/{report}',
+      config: this.config,
       responseSchema: z.any(),
       requestSchema: z.any(),
-      queryParams: {},
-      headers: {},
       requestContentType: ContentType.Json,
       responseContentType: ContentType.Json,
-      retry: requestConfig?.retry,
-      config: this.config,
-    };
-    if (params?.isAggregate) {
-      options.queryParams['isAggregate'] = params?.isAggregate;
-    }
-    if (params?.isGame) {
-      options.queryParams['isGame'] = params?.isGame;
-    }
-    if (params?.factCayenneExp) {
-      options.queryParams['factCayenneExp'] = params?.factCayenneExp;
-    }
-    if (params?.include) {
-      options.queryParams['include'] = params?.include;
-    }
-    if (params?.exclude) {
-      options.queryParams['exclude'] = params?.exclude;
-    }
-    if (params?.cayenneExp) {
-      options.queryParams['cayenneExp'] = params?.cayenneExp;
-    }
-    if (params?.sort) {
-      options.queryParams['sort'] = params?.sort;
-    }
-    if (params?.dir) {
-      options.queryParams['dir'] = params?.dir;
-    }
-    if (params?.start) {
-      options.queryParams['start'] = params?.start;
-    }
-    if (params?.limit) {
-      options.queryParams['limit'] = params?.limit;
-    }
-    return this.client.get(path, options);
+      requestConfig,
+    });
+    request.addPathParam('report', report);
+    request.addPathParam('lang', lang);
+    request.addQueryParam('isAggregate', params?.isAggregate);
+    request.addQueryParam('isGame', params?.isGame);
+    request.addQueryParam('factCayenneExp', params?.factCayenneExp);
+    request.addQueryParam('include', params?.include);
+    request.addQueryParam('exclude', params?.exclude);
+    request.addQueryParam('cayenneExp', params?.cayenneExp);
+    request.addQueryParam('sort', params?.sort);
+    request.addQueryParam('dir', params?.dir);
+    request.addQueryParam('start', params?.start);
+    request.addQueryParam('limit', params?.limit);
+    return this.client.call(request);
   }
 
   /**
@@ -98,16 +81,17 @@ export class TeamsService extends BaseService {
    * @returns {Promise<HttpResponse<any>>} Successful response
    */
   async getFranchiseInformation(lang: string, requestConfig?: RequestConfig): Promise<HttpResponse<any>> {
-    const path = this.client.buildPath('/{lang}/franchise', { lang: lang });
-    const options: any = {
+    const request = new Request({
+      method: 'GET',
+      path: '/{lang}/franchise',
+      config: this.config,
       responseSchema: z.any(),
       requestSchema: z.any(),
-      headers: {},
       requestContentType: ContentType.Json,
       responseContentType: ContentType.Json,
-      retry: requestConfig?.retry,
-      config: this.config,
-    };
-    return this.client.get(path, options);
+      requestConfig,
+    });
+    request.addPathParam('lang', lang);
+    return this.client.call(request);
   }
 }
