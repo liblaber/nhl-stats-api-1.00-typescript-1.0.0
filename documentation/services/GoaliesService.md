@@ -29,12 +29,12 @@ Retrieve goalie leaders for a specific attribute.
 **Example Usage Code Snippet**
 
 ```typescript
-import { NhlStats } from 'nhl_stats';
+import { NhlStatsClient } from 'nhl_stats_client';
 
 (async () => {
-  const nhlStats = new NhlStats({});
+  const nhlStatsClient = new NhlStatsClient({});
 
-  const { data } = await nhlStats.goalies.getGoalieLeaders('attribute', 'lang');
+  const { data } = await nhlStatsClient.goalies.getGoalieLeaders('attribute', 'lang');
 
   console.log(data);
 })();
@@ -71,12 +71,12 @@ Retrieve goalie stats for a specific report.
 **Example Usage Code Snippet**
 
 ```typescript
-import { NhlStats } from 'nhl_stats';
+import { NhlStatsClient } from 'nhl_stats_client';
 
 (async () => {
-  const nhlStats = new NhlStats({});
+  const nhlStatsClient = new NhlStatsClient({});
 
-  const { data } = await nhlStats.goalies.getGoalieStats('report', 'lang', {
+  const { data } = await nhlStatsClient.goalies.getGoalieStats('report', 'lang', {
     isAggregate: true,
     isGame: true,
     factCayenneExp: 'factCayenneExp',
@@ -113,12 +113,12 @@ Retrieve goalie milestones.
 **Example Usage Code Snippet**
 
 ```typescript
-import { NhlStats } from 'nhl_stats';
+import { NhlStatsClient } from 'nhl_stats_client';
 
 (async () => {
-  const nhlStats = new NhlStats({});
+  const nhlStatsClient = new NhlStatsClient({});
 
-  const { data } = await nhlStats.goalies.getGoalieMilestones('lang');
+  const { data } = await nhlStatsClient.goalies.getGoalieMilestones('lang');
 
   console.log(data);
 })();

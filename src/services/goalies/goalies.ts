@@ -27,7 +27,7 @@ export class GoaliesService extends BaseService {
     });
     request.addPathParam('attribute', attribute);
     request.addPathParam('lang', lang);
-    return this.client.call(request);
+    return this.client.call<any>(request);
   }
 
   /**
@@ -74,7 +74,7 @@ export class GoaliesService extends BaseService {
     request.addQueryParam('dir', params?.dir);
     request.addQueryParam('start', params?.start);
     request.addQueryParam('limit', params?.limit);
-    return this.client.call(request);
+    return this.client.call<any>(request);
   }
 
   /**
@@ -94,6 +94,6 @@ export class GoaliesService extends BaseService {
       requestConfig,
     });
     request.addPathParam('lang', lang);
-    return this.client.call(request);
+    return this.client.call<any>(request);
   }
 }

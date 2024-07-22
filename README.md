@@ -1,6 +1,6 @@
-# NhlStats TypeScript SDK 1.0.0
+# NhlStatsClient TypeScript SDK 1.0.0
 
-Welcome to the NhlStats SDK documentation. This guide will help you get started with integrating and using the NhlStats SDK in your project.
+Welcome to the NhlStatsClient SDK documentation. This guide will help you get started with integrating and using the NhlStatsClient SDK in your project.
 
 ## Versions
 
@@ -31,7 +31,7 @@ This SDK is compatible with the following versions: `TypeScript >= 4.8.4`
 To get started with the SDK, we recommend installing using `npm`:
 
 ```bash
-npm install nhl_stats
+npm install nhl_stats_client
 ```
 
 ## Services

@@ -24,7 +24,7 @@ export class GameService extends BaseService {
       requestConfig,
     });
     request.addPathParam('lang', lang);
-    return this.client.call(request);
+    return this.client.call<any>(request);
   }
 
   /**
@@ -44,6 +44,6 @@ export class GameService extends BaseService {
       requestConfig,
     });
     request.addPathParam('lang', lang);
-    return this.client.call(request);
+    return this.client.call<any>(request);
   }
 }

@@ -25,7 +25,7 @@ export class TeamsService extends BaseService {
       requestConfig,
     });
     request.addPathParam('lang', lang);
-    return this.client.call(request);
+    return this.client.call<any>(request);
   }
 
   /**
@@ -72,7 +72,7 @@ export class TeamsService extends BaseService {
     request.addQueryParam('dir', params?.dir);
     request.addQueryParam('start', params?.start);
     request.addQueryParam('limit', params?.limit);
-    return this.client.call(request);
+    return this.client.call<any>(request);
   }
 
   /**
@@ -92,6 +92,6 @@ export class TeamsService extends BaseService {
       requestConfig,
     });
     request.addPathParam('lang', lang);
-    return this.client.call(request);
+    return this.client.call<any>(request);
   }
 }

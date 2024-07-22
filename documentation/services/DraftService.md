@@ -26,12 +26,12 @@ Retrieve draft information.
 **Example Usage Code Snippet**
 
 ```typescript
-import { NhlStats } from 'nhl_stats';
+import { NhlStatsClient } from 'nhl_stats_client';
 
 (async () => {
-  const nhlStats = new NhlStats({});
+  const nhlStatsClient = new NhlStatsClient({});
 
-  const { data } = await nhlStats.draft.getDraftInformation('lang');
+  const { data } = await nhlStatsClient.draft.getDraftInformation('lang');
 
   console.log(data);
 })();

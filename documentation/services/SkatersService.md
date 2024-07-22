@@ -30,12 +30,12 @@ Retrieve skater leaders for a specific attribute.
 **Example Usage Code Snippet**
 
 ```typescript
-import { NhlStats } from 'nhl_stats';
+import { NhlStatsClient } from 'nhl_stats_client';
 
 (async () => {
-  const nhlStats = new NhlStats({});
+  const nhlStatsClient = new NhlStatsClient({});
 
-  const { data } = await nhlStats.skaters.getSkaterLeaders('attribute', 'lang');
+  const { data } = await nhlStatsClient.skaters.getSkaterLeaders('attribute', 'lang');
 
   console.log(data);
 })();
@@ -61,12 +61,12 @@ Retrieve skater milestones.
 **Example Usage Code Snippet**
 
 ```typescript
-import { NhlStats } from 'nhl_stats';
+import { NhlStatsClient } from 'nhl_stats_client';
 
 (async () => {
-  const nhlStats = new NhlStats({});
+  const nhlStatsClient = new NhlStatsClient({});
 
-  const { data } = await nhlStats.skaters.getSkaterMilestones('lang');
+  const { data } = await nhlStatsClient.skaters.getSkaterMilestones('lang');
 
   console.log(data);
 })();
@@ -92,12 +92,12 @@ Retrieve skater information.
 **Example Usage Code Snippet**
 
 ```typescript
-import { NhlStats } from 'nhl_stats';
+import { NhlStatsClient } from 'nhl_stats_client';
 
 (async () => {
-  const nhlStats = new NhlStats({});
+  const nhlStatsClient = new NhlStatsClient({});
 
-  const { data } = await nhlStats.skaters.getSkaterInformation('lang');
+  const { data } = await nhlStatsClient.skaters.getSkaterInformation('lang');
 
   console.log(data);
 })();
@@ -134,12 +134,12 @@ Retrieve skater stats for a specific report.
 **Example Usage Code Snippet**
 
 ```typescript
-import { NhlStats } from 'nhl_stats';
+import { NhlStatsClient } from 'nhl_stats_client';
 
 (async () => {
-  const nhlStats = new NhlStats({});
+  const nhlStatsClient = new NhlStatsClient({});
 
-  const { data } = await nhlStats.skaters.getSkaterStats('report', 'lang', {
+  const { data } = await nhlStatsClient.skaters.getSkaterStats('report', 'lang', {
     isAggregate: true,
     isGame: true,
     factCayenneExp: 'factCayenneExp',

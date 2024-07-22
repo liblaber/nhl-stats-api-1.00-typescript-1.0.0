@@ -32,12 +32,12 @@ Retrieve configuration information.
 **Example Usage Code Snippet**
 
 ```typescript
-import { NhlStats } from 'nhl_stats';
+import { NhlStatsClient } from 'nhl_stats_client';
 
 (async () => {
-  const nhlStats = new NhlStats({});
+  const nhlStatsClient = new NhlStatsClient({});
 
-  const { data } = await nhlStats.miscellaneous.getConfiguration('lang');
+  const { data } = await nhlStatsClient.miscellaneous.getConfiguration('lang');
 
   console.log(data);
 })();
@@ -57,12 +57,12 @@ Ping the server to check connectivity.
 **Example Usage Code Snippet**
 
 ```typescript
-import { NhlStats } from 'nhl_stats';
+import { NhlStatsClient } from 'nhl_stats_client';
 
 (async () => {
-  const nhlStats = new NhlStats({});
+  const nhlStatsClient = new NhlStatsClient({});
 
-  const { data } = await nhlStats.miscellaneous.pingServer();
+  const { data } = await nhlStatsClient.miscellaneous.pingServer();
 
   console.log(data);
 })();
@@ -88,12 +88,12 @@ Retrieve country information. Returns list of all countries with a hockey presen
 **Example Usage Code Snippet**
 
 ```typescript
-import { NhlStats } from 'nhl_stats';
+import { NhlStatsClient } from 'nhl_stats_client';
 
 (async () => {
-  const nhlStats = new NhlStats({});
+  const nhlStatsClient = new NhlStatsClient({});
 
-  const { data } = await nhlStats.miscellaneous.getCountryInformation('lang');
+  const { data } = await nhlStatsClient.miscellaneous.getCountryInformation('lang');
 
   console.log(data);
 })();
@@ -120,12 +120,12 @@ Retrieve shift charts for a specific game.
 **Example Usage Code Snippet**
 
 ```typescript
-import { NhlStats } from 'nhl_stats';
+import { NhlStatsClient } from 'nhl_stats_client';
 
 (async () => {
-  const nhlStats = new NhlStats({});
+  const nhlStatsClient = new NhlStatsClient({});
 
-  const { data } = await nhlStats.miscellaneous.getShiftCharts('lang', {
+  const { data } = await nhlStatsClient.miscellaneous.getShiftCharts('lang', {
     cayenneExp: 'cayenneExp',
   });
 
@@ -153,12 +153,12 @@ Retrieve the glossary for a specific language.
 **Example Usage Code Snippet**
 
 ```typescript
-import { NhlStats } from 'nhl_stats';
+import { NhlStatsClient } from 'nhl_stats_client';
 
 (async () => {
-  const nhlStats = new NhlStats({});
+  const nhlStatsClient = new NhlStatsClient({});
 
-  const { data } = await nhlStats.miscellaneous.getGlossary('lang');
+  const { data } = await nhlStatsClient.miscellaneous.getGlossary('lang');
 
   console.log(data);
 })();
@@ -184,12 +184,12 @@ Retrieve content module information.
 **Example Usage Code Snippet**
 
 ```typescript
-import { NhlStats } from 'nhl_stats';
+import { NhlStatsClient } from 'nhl_stats_client';
 
 (async () => {
-  const nhlStats = new NhlStats({});
+  const nhlStatsClient = new NhlStatsClient({});
 
-  const { data } = await nhlStats.miscellaneous.getContentModule('lang');
+  const { data } = await nhlStatsClient.miscellaneous.getContentModule('lang');
 
   console.log(data);
 })();
@@ -209,12 +209,12 @@ Retrieve metadata for content modules.
 **Example Usage Code Snippet**
 
 ```typescript
-import { NhlStats } from 'nhl_stats';
+import { NhlStatsClient } from 'nhl_stats_client';
 
 (async () => {
-  const nhlStats = new NhlStats({});
+  const nhlStatsClient = new NhlStatsClient({});
 
-  const { data } = await nhlStats.miscellaneous.getContentModuleMetadata();
+  const { data } = await nhlStatsClient.miscellaneous.getContentModuleMetadata();
 
   console.log(data);
 })();

@@ -11,7 +11,7 @@ import { SeasonService } from './services/season';
 import { GameService } from './services/game';
 import { MiscellaneousService } from './services/miscellaneous';
 
-export class NhlStats {
+export class NhlStatsClient {
   public readonly players: PlayersService;
 
   public readonly skaters: SkatersService;

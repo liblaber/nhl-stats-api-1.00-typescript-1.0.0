@@ -24,6 +24,6 @@ export class DraftService extends BaseService {
       requestConfig,
     });
     request.addPathParam('lang', lang);
-    return this.client.call(request);
+    return this.client.call<any>(request);
   }
 }
