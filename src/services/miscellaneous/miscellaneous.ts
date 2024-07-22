@@ -4,6 +4,7 @@ import { z } from 'zod';
 import { BaseService } from '../base-service';
 import { ContentType, HttpResponse } from '../../http';
 import { RequestConfig } from '../../http/types';
+import { Request } from '../../http/transport/request';
 import { GetShiftChartsParams } from './request-params';
 
 export class MiscellaneousService extends BaseService {
@@ -13,17 +14,18 @@ export class MiscellaneousService extends BaseService {
    * @returns {Promise<HttpResponse<any>>} Successful response
    */
   async getConfiguration(lang: string, requestConfig?: RequestConfig): Promise<HttpResponse<any>> {
-    const path = this.client.buildPath('/{lang}/config', { lang: lang });
-    const options: any = {
+    const request = new Request({
+      method: 'GET',
+      path: '/{lang}/config',
+      config: this.config,
       responseSchema: z.any(),
       requestSchema: z.any(),
-      headers: {},
       requestContentType: ContentType.Json,
       responseContentType: ContentType.Json,
-      retry: requestConfig?.retry,
-      config: this.config,
-    };
-    return this.client.get(path, options);
+      requestConfig,
+    });
+    request.addPathParam('lang', lang);
+    return this.client.call(request);
   }
 
   /**
@@ -31,17 +33,17 @@ export class MiscellaneousService extends BaseService {
    * @returns {Promise<HttpResponse<any>>} Successful response
    */
   async pingServer(requestConfig?: RequestConfig): Promise<HttpResponse<any>> {
-    const path = '/ping';
-    const options: any = {
+    const request = new Request({
+      method: 'GET',
+      path: '/ping',
+      config: this.config,
       responseSchema: z.any(),
       requestSchema: z.any(),
-      headers: {},
       requestContentType: ContentType.Json,
       responseContentType: ContentType.Json,
-      retry: requestConfig?.retry,
-      config: this.config,
-    };
-    return this.client.get(path, options);
+      requestConfig,
+    });
+    return this.client.call(request);
   }
 
   /**
@@ -50,17 +52,18 @@ export class MiscellaneousService extends BaseService {
    * @returns {Promise<HttpResponse<any>>} Successful response
    */
   async getCountryInformation(lang: string, requestConfig?: RequestConfig): Promise<HttpResponse<any>> {
-    const path = this.client.buildPath('/{lang}/country', { lang: lang });
-    const options: any = {
+    const request = new Request({
+      method: 'GET',
+      path: '/{lang}/country',
+      config: this.config,
       responseSchema: z.any(),
       requestSchema: z.any(),
-      headers: {},
       requestContentType: ContentType.Json,
       responseContentType: ContentType.Json,
-      retry: requestConfig?.retry,
-      config: this.config,
-    };
-    return this.client.get(path, options);
+      requestConfig,
+    });
+    request.addPathParam('lang', lang);
+    return this.client.call(request);
   }
 
   /**
@@ -74,21 +77,19 @@ export class MiscellaneousService extends BaseService {
     params: GetShiftChartsParams,
     requestConfig?: RequestConfig,
   ): Promise<HttpResponse<any>> {
-    const path = this.client.buildPath('/{lang}/shiftcharts', { lang: lang });
-    const options: any = {
+    const request = new Request({
+      method: 'GET',
+      path: '/{lang}/shiftcharts',
+      config: this.config,
       responseSchema: z.any(),
       requestSchema: z.any(),
-      queryParams: {},
-      headers: {},
       requestContentType: ContentType.Json,
       responseContentType: ContentType.Json,
-      retry: requestConfig?.retry,
-      config: this.config,
-    };
-    if (params?.cayenneExp) {
-      options.queryParams['cayenneExp'] = params?.cayenneExp;
-    }
-    return this.client.get(path, options);
+      requestConfig,
+    });
+    request.addPathParam('lang', lang);
+    request.addQueryParam('cayenneExp', params?.cayenneExp);
+    return this.client.call(request);
   }
 
   /**
@@ -97,17 +98,18 @@ export class MiscellaneousService extends BaseService {
    * @returns {Promise<HttpResponse<any>>} Successful response
    */
   async getGlossary(lang: string, requestConfig?: RequestConfig): Promise<HttpResponse<any>> {
-    const path = this.client.buildPath('/{lang}/glossary', { lang: lang });
-    const options: any = {
+    const request = new Request({
+      method: 'GET',
+      path: '/{lang}/glossary',
+      config: this.config,
       responseSchema: z.any(),
       requestSchema: z.any(),
-      headers: {},
       requestContentType: ContentType.Json,
       responseContentType: ContentType.Json,
-      retry: requestConfig?.retry,
-      config: this.config,
-    };
-    return this.client.get(path, options);
+      requestConfig,
+    });
+    request.addPathParam('lang', lang);
+    return this.client.call(request);
   }
 
   /**
@@ -116,17 +118,18 @@ export class MiscellaneousService extends BaseService {
    * @returns {Promise<HttpResponse<any>>} Successful response
    */
   async getContentModule(lang: string, requestConfig?: RequestConfig): Promise<HttpResponse<any>> {
-    const path = this.client.buildPath('/{lang}/content/module', { lang: lang });
-    const options: any = {
+    const request = new Request({
+      method: 'GET',
+      path: '/{lang}/content/module',
+      config: this.config,
       responseSchema: z.any(),
       requestSchema: z.any(),
-      headers: {},
       requestContentType: ContentType.Json,
       responseContentType: ContentType.Json,
-      retry: requestConfig?.retry,
-      config: this.config,
-    };
-    return this.client.get(path, options);
+      requestConfig,
+    });
+    request.addPathParam('lang', lang);
+    return this.client.call(request);
   }
 
   /**
@@ -134,16 +137,16 @@ export class MiscellaneousService extends BaseService {
    * @returns {Promise<HttpResponse<any>>} Successful response
    */
   async getContentModuleMetadata(requestConfig?: RequestConfig): Promise<HttpResponse<any>> {
-    const path = '/content/module/meta';
-    const options: any = {
+    const request = new Request({
+      method: 'GET',
+      path: '/content/module/meta',
+      config: this.config,
       responseSchema: z.any(),
       requestSchema: z.any(),
-      headers: {},
       requestContentType: ContentType.Json,
       responseContentType: ContentType.Json,
-      retry: requestConfig?.retry,
-      config: this.config,
-    };
-    return this.client.get(path, options);
+      requestConfig,
+    });
+    return this.client.call(request);
   }
 }

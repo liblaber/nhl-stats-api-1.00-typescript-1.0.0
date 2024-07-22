@@ -4,6 +4,7 @@ import { z } from 'zod';
 import { BaseService } from '../base-service';
 import { ContentType, HttpResponse } from '../../http';
 import { RequestConfig } from '../../http/types';
+import { Request } from '../../http/transport/request';
 
 export class SeasonService extends BaseService {
   /**
@@ -12,17 +13,18 @@ export class SeasonService extends BaseService {
    * @returns {Promise<HttpResponse<any>>} Successful response
    */
   async getComponentSeason(lang: string, requestConfig?: RequestConfig): Promise<HttpResponse<any>> {
-    const path = this.client.buildPath('/{lang}/componentSeason', { lang: lang });
-    const options: any = {
+    const request = new Request({
+      method: 'GET',
+      path: '/{lang}/componentSeason',
+      config: this.config,
       responseSchema: z.any(),
       requestSchema: z.any(),
-      headers: {},
       requestContentType: ContentType.Json,
       responseContentType: ContentType.Json,
-      retry: requestConfig?.retry,
-      config: this.config,
-    };
-    return this.client.get(path, options);
+      requestConfig,
+    });
+    request.addPathParam('lang', lang);
+    return this.client.call(request);
   }
 
   /**
@@ -31,16 +33,17 @@ export class SeasonService extends BaseService {
    * @returns {Promise<HttpResponse<any>>} Successful response
    */
   async getSeasonInformation(lang: string, requestConfig?: RequestConfig): Promise<HttpResponse<any>> {
-    const path = this.client.buildPath('/{lang}/season', { lang: lang });
-    const options: any = {
+    const request = new Request({
+      method: 'GET',
+      path: '/{lang}/season',
+      config: this.config,
       responseSchema: z.any(),
       requestSchema: z.any(),
-      headers: {},
       requestContentType: ContentType.Json,
       responseContentType: ContentType.Json,
-      retry: requestConfig?.retry,
-      config: this.config,
-    };
-    return this.client.get(path, options);
+      requestConfig,
+    });
+    request.addPathParam('lang', lang);
+    return this.client.call(request);
   }
 }

@@ -85,8 +85,8 @@ import { NhlStats } from 'nhl_stats';
     cayenneExp: 'cayenneExp',
     sort: 'sort',
     dir: 'dir',
-    start: 5,
-    limit: 123,
+    start: 6,
+    limit: 7,
   });
 
   console.log(data);

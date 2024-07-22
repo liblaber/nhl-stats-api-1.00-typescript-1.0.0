@@ -4,6 +4,7 @@ import { z } from 'zod';
 import { BaseService } from '../base-service';
 import { ContentType, HttpResponse } from '../../http';
 import { RequestConfig } from '../../http/types';
+import { Request } from '../../http/transport/request';
 
 export class GameService extends BaseService {
   /**
@@ -12,17 +13,18 @@ export class GameService extends BaseService {
    * @returns {Promise<HttpResponse<any>>} Successful response
    */
   async getGameInformation(lang: string, requestConfig?: RequestConfig): Promise<HttpResponse<any>> {
-    const path = this.client.buildPath('/{lang}/game', { lang: lang });
-    const options: any = {
+    const request = new Request({
+      method: 'GET',
+      path: '/{lang}/game',
+      config: this.config,
       responseSchema: z.any(),
       requestSchema: z.any(),
-      headers: {},
       requestContentType: ContentType.Json,
       responseContentType: ContentType.Json,
-      retry: requestConfig?.retry,
-      config: this.config,
-    };
-    return this.client.get(path, options);
+      requestConfig,
+    });
+    request.addPathParam('lang', lang);
+    return this.client.call(request);
   }
 
   /**
@@ -31,16 +33,17 @@ export class GameService extends BaseService {
    * @returns {Promise<HttpResponse<any>>} Successful response
    */
   async getGameMetadata(lang: string, requestConfig?: RequestConfig): Promise<HttpResponse<any>> {
-    const path = this.client.buildPath('/{lang}/game/meta', { lang: lang });
-    const options: any = {
+    const request = new Request({
+      method: 'GET',
+      path: '/{lang}/game/meta',
+      config: this.config,
       responseSchema: z.any(),
       requestSchema: z.any(),
-      headers: {},
       requestContentType: ContentType.Json,
       responseContentType: ContentType.Json,
-      retry: requestConfig?.retry,
-      config: this.config,
-    };
-    return this.client.get(path, options);
+      requestConfig,
+    });
+    request.addPathParam('lang', lang);
+    return this.client.call(request);
   }
 }

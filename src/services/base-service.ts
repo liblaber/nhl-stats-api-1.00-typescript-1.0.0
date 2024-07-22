@@ -16,4 +16,8 @@ export class BaseService {
   set environment(environment: Environment) {
     this.config.environment = environment;
   }
+
+  set timeout(timeout: number) {
+    this.config.timeout = timeout;
+  }
 }
