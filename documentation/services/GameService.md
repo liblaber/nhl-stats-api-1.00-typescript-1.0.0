@@ -27,12 +27,12 @@ Retrieve game information.
 **Example Usage Code Snippet**
 
 ```typescript
-import { NhlStats } from 'nhl_stats';
+import { NhlStatsClient } from 'nhl_stats_client';
 
 (async () => {
-  const nhlStats = new NhlStats({});
+  const nhlStatsClient = new NhlStatsClient({});
 
-  const { data } = await nhlStats.game.getGameInformation('lang');
+  const { data } = await nhlStatsClient.game.getGameInformation('lang');
 
   console.log(data);
 })();
@@ -58,12 +58,12 @@ Retrieve metadata for game.
 **Example Usage Code Snippet**
 
 ```typescript
-import { NhlStats } from 'nhl_stats';
+import { NhlStatsClient } from 'nhl_stats_client';
 
 (async () => {
-  const nhlStats = new NhlStats({});
+  const nhlStatsClient = new NhlStatsClient({});
 
-  const { data } = await nhlStats.game.getGameMetadata('lang');
+  const { data } = await nhlStatsClient.game.getGameMetadata('lang');
 
   console.log(data);
 })();

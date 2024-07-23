@@ -28,12 +28,12 @@ Retrieve list of all teams.
 **Example Usage Code Snippet**
 
 ```typescript
-import { NhlStats } from 'nhl_stats';
+import { NhlStatsClient } from 'nhl_stats_client';
 
 (async () => {
-  const nhlStats = new NhlStats({});
+  const nhlStatsClient = new NhlStatsClient({});
 
-  const { data } = await nhlStats.teams.getTeamInformation('lang');
+  const { data } = await nhlStatsClient.teams.getTeamInformation('lang');
 
   console.log(data);
 })();
@@ -70,12 +70,12 @@ Retrieve team stats for a specific report.
 **Example Usage Code Snippet**
 
 ```typescript
-import { NhlStats } from 'nhl_stats';
+import { NhlStatsClient } from 'nhl_stats_client';
 
 (async () => {
-  const nhlStats = new NhlStats({});
+  const nhlStatsClient = new NhlStatsClient({});
 
-  const { data } = await nhlStats.teams.getTeamStats('report', 'lang', {
+  const { data } = await nhlStatsClient.teams.getTeamStats('report', 'lang', {
     isAggregate: true,
     isGame: true,
     factCayenneExp: 'factCayenneExp',
@@ -112,12 +112,12 @@ Retrieve list of all franchises.
 **Example Usage Code Snippet**
 
 ```typescript
-import { NhlStats } from 'nhl_stats';
+import { NhlStatsClient } from 'nhl_stats_client';
 
 (async () => {
-  const nhlStats = new NhlStats({});
+  const nhlStatsClient = new NhlStatsClient({});
 
-  const { data } = await nhlStats.teams.getFranchiseInformation('lang');
+  const { data } = await nhlStatsClient.teams.getFranchiseInformation('lang');
 
   console.log(data);
 })();

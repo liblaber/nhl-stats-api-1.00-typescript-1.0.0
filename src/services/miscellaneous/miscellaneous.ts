@@ -25,7 +25,7 @@ export class MiscellaneousService extends BaseService {
       requestConfig,
     });
     request.addPathParam('lang', lang);
-    return this.client.call(request);
+    return this.client.call<any>(request);
   }
 
   /**
@@ -43,7 +43,7 @@ export class MiscellaneousService extends BaseService {
       responseContentType: ContentType.Json,
       requestConfig,
     });
-    return this.client.call(request);
+    return this.client.call<any>(request);
   }
 
   /**
@@ -63,7 +63,7 @@ export class MiscellaneousService extends BaseService {
       requestConfig,
     });
     request.addPathParam('lang', lang);
-    return this.client.call(request);
+    return this.client.call<any>(request);
   }
 
   /**
@@ -89,7 +89,7 @@ export class MiscellaneousService extends BaseService {
     });
     request.addPathParam('lang', lang);
     request.addQueryParam('cayenneExp', params?.cayenneExp);
-    return this.client.call(request);
+    return this.client.call<any>(request);
   }
 
   /**
@@ -109,7 +109,7 @@ export class MiscellaneousService extends BaseService {
       requestConfig,
     });
     request.addPathParam('lang', lang);
-    return this.client.call(request);
+    return this.client.call<any>(request);
   }
 
   /**
@@ -129,7 +129,7 @@ export class MiscellaneousService extends BaseService {
       requestConfig,
     });
     request.addPathParam('lang', lang);
-    return this.client.call(request);
+    return this.client.call<any>(request);
   }
 
   /**
@@ -147,6 +147,6 @@ export class MiscellaneousService extends BaseService {
       responseContentType: ContentType.Json,
       requestConfig,
     });
-    return this.client.call(request);
+    return this.client.call<any>(request);
   }
 }

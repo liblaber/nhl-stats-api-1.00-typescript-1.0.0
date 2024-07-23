@@ -26,12 +26,12 @@ Retrieve player information. Currently seems to return a truncated list with a t
 **Example Usage Code Snippet**
 
 ```typescript
-import { NhlStats } from 'nhl_stats';
+import { NhlStatsClient } from 'nhl_stats_client';
 
 (async () => {
-  const nhlStats = new NhlStats({});
+  const nhlStatsClient = new NhlStatsClient({});
 
-  const { data } = await nhlStats.players.getPlayerInformation('lang');
+  const { data } = await nhlStatsClient.players.getPlayerInformation('lang');
 
   console.log(data);
 })();

@@ -27,12 +27,12 @@ Retrieve component season information.
 **Example Usage Code Snippet**
 
 ```typescript
-import { NhlStats } from 'nhl_stats';
+import { NhlStatsClient } from 'nhl_stats_client';
 
 (async () => {
-  const nhlStats = new NhlStats({});
+  const nhlStatsClient = new NhlStatsClient({});
 
-  const { data } = await nhlStats.season.getComponentSeason('lang');
+  const { data } = await nhlStatsClient.season.getComponentSeason('lang');
 
   console.log(data);
 })();
@@ -58,12 +58,12 @@ Retrieve season information.
 **Example Usage Code Snippet**
 
 ```typescript
-import { NhlStats } from 'nhl_stats';
+import { NhlStatsClient } from 'nhl_stats_client';
 
 (async () => {
-  const nhlStats = new NhlStats({});
+  const nhlStatsClient = new NhlStatsClient({});
 
-  const { data } = await nhlStats.season.getSeasonInformation('lang');
+  const { data } = await nhlStatsClient.season.getSeasonInformation('lang');
 
   console.log(data);
 })();

@@ -1,9 +1,9 @@
 {
-  "name": "nhl_stats",
+  "name": "nhl_stats_client",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "nhl_stats": "file:../",
+    "nhl_stats_client": "file:../",
     "zod": "3.22.0"
   },
   "scripts": {
